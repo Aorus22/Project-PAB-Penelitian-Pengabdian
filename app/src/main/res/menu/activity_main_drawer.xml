@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group android:id="@+id/first_menu" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_dashboard"
+            android:title="@string/menu_dashboard" />
+    </group>
+
+    <group android:id="@+id/second_menu" android:checkableBehavior="single">
+        <item
+            android:id="@+id/main_item"
+            android:icon="@drawable/ic_activity"
+            android:title="Aktivitas">
+            <menu>
+                <item
+                    android:id="@+id/nav_data_penelitian"
+                    android:icon="@drawable/ic_science"
+                    android:title="Data Penelitian"
+                    android:checkable="true"/>
+                <item
+                    android:id="@+id/nav_data_pengabdian"
+                    android:icon="@drawable/ic_handshake"
+                    android:title="Pengabdian Pada Masyarakat"
+                    android:checkable="true"/>
+                <item
+                    android:id="@+id/nav_data_riset"
+                    android:icon="@drawable/ic_groups"
+                    android:title="Data Grup Riset"
+                    android:checkable="true" />
+                <item
+                    android:id="@+id/nav_data_publikasi"
+                    android:icon="@drawable/ic_book_5"
+                    android:title="Publikasi"
+                    android:checkable="true" />
+                <item
+                    android:id="@+id/nav_data_sitasi"
+                    android:icon="@drawable/ic_ebook"
+                    android:title="Data Sitasi"
+                    android:checkable="true" />
+            </menu>
+        </item>
+    </group>
+    <group android:id="@+id/third_menu" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_history"
+            android:title="@string/menu_history" />
+    </group>
+</menu>

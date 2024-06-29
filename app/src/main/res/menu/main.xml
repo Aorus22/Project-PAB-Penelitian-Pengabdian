@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_facebook"
+        android:title="Facebook"
+        android:icon="@drawable/ic_facebook"
+        app:iconTint="?attr/colorOnPrimary"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_x"
+        android:title="X"
+        android:icon="@drawable/ic_x"
+        app:iconTint="?attr/colorOnPrimary"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_instagram"
+        android:title="Instagram"
+        android:icon="@drawable/ic_instagram"
+        app:iconTint="?attr/colorOnPrimary"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_linkedin"
+        android:title="LinkedIn"
+        android:icon="@drawable/ic_linkedin"
+        app:iconTint="?attr/colorOnPrimary"
+        app:showAsAction="always" />
+</menu>
