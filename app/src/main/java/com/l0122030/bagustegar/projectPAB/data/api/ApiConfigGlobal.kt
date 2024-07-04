@@ -6,10 +6,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiConfig {
+class ApiConfigGlobal {
     companion object {
-        private const val BASE_URL = "https://firestore.googleapis.com/v1/projects/project-pab-947de/databases/(default)/documents/"
-        private const val BASE_URL1 = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/"
+        private const val BASE_URL = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/"
 
         fun getApiService(): ApiService {
             val loggingInterceptor = if (BuildConfig.DEBUG) {

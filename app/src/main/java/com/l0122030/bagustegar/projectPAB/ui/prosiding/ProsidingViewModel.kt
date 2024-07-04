@@ -1,4 +1,4 @@
-package com.l0122030.bagustegar.projectPAB.ui.rekap
+package com.l0122030.bagustegar.projectPAB.ui.prosiding
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,27 +6,27 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.l0122030.bagustegar.projectPAB.data.api.ApiConfigGlobal
-import com.l0122030.bagustegar.projectPAB.data.model.Rekap
-import com.l0122030.bagustegar.projectPAB.data.model.RekapResponse
+import com.l0122030.bagustegar.projectPAB.data.model.Prosiding
+import com.l0122030.bagustegar.projectPAB.data.model.ProsidingResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class RekapViewModel : ViewModel() {
+class ProsidingViewModel : ViewModel() {
 
-    private var _uiState: MutableLiveData<RekapState> = MutableLiveData(RekapState.Loading)
-    val uiState: LiveData<RekapState> get() = _uiState
+    private var _uiState: MutableLiveData<ProsidingState> = MutableLiveData(ProsidingState.Loading)
+    val uiState: LiveData<ProsidingState> get() = _uiState
 
     init {
-        getRekap()
+        getProsiding()
     }
 
-    private fun getRekap() {
+    private fun getProsiding() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = ApiConfigGlobal.getApiService().getRekap()
+                val response = ApiConfigGlobal.getApiService().getProsiding()
                 val result = response.documents?.map {
-                    Rekap(
-                        name = it.fields?.rekapname?.stringValue.orEmpty(),
+                    Prosiding(
+                        name = it.fields?.prosidingname?.stringValue.orEmpty(),
                         jumlah2022 = it.fields?.jumlah2022?.integerValue?.toInt() ?: 0,
                         jumlah2023 = it.fields?.jumlah2023?.integerValue?.toInt() ?: 0,
                         jumlah2024 = it.fields?.jumlah2024?.integerValue?.toInt() ?: 0
@@ -34,19 +34,19 @@ class RekapViewModel : ViewModel() {
                 } ?: emptyList()
 
                 if (result.isNotEmpty()) {
-                    _uiState.postValue(RekapState.Success(result))
+                    _uiState.postValue(ProsidingState.Success(result))
                 } else {
-                    _uiState.postValue(RekapState.Error(Throwable("Data not found")))
+                    _uiState.postValue(ProsidingState.Error(Throwable("Data not found")))
                 }
             } catch (e: Exception) {
-                _uiState.postValue(RekapState.Error(e))
+                _uiState.postValue(ProsidingState.Error(e))
             }
         }
     }
 }
 
-sealed class RekapState {
-    object Loading : RekapState()
-    data class Success(val data: List<Rekap>) : RekapState()
-    data class Error(val error: Throwable) : RekapState()
+sealed class ProsidingState {
+    object Loading : ProsidingState()
+    data class Success(val data: List<Prosiding>) : ProsidingState()
+    data class Error(val error: Throwable) : ProsidingState()
 }
