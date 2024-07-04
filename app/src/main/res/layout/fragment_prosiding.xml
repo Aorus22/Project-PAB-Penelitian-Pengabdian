@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/bg_image"
+    tools:context=".ui.rekap.RekapFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Artikel ilmiah/karya ilmiah/karya seni/buku yang dihasilkan selama tiga tahun terakhir oleh dosen tetap."
+            android:textColor="#FFFFFF"
+            android:background="#009ADA"
+            android:padding="5dp"
+            android:layout_margin="8dp" />
+
+        <GridLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#009ADA"
+            android:columnCount="6"
+            android:gravity="center"
+            android:rowCount="2"
+            android:layout_below="@id/title">
+
+            <TextView
+                android:layout_row="0"
+                android:layout_rowSpan="2"
+                android:layout_column="0"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="No."
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_row="0"
+                android:layout_rowSpan="2"
+                android:layout_column="1"
+                android:gravity="center"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="8dp"
+                android:text="Sumber Pembiayaan"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_row="0"
+                android:layout_rowSpan="1"
+                android:layout_column="2"
+                android:layout_columnSpan="3"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:text="Jumlah Judul"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_row="1"
+                android:layout_rowSpan="1"
+                android:layout_column="2"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="2022"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_row="1"
+                android:layout_rowSpan="1"
+                android:layout_column="3"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="2023"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_row="1"
+                android:layout_rowSpan="1"
+                android:layout_column="4"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="2024"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_row="0"
+                android:layout_rowSpan="2"
+                android:layout_column="5"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Total"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </GridLayout>
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:stretchColumns="1"
+            android:layout_below="@id/header">
+        </TableLayout>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:id="@+id/progress_circular" />
+    </RelativeLayout>
+</ScrollView>
