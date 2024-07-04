@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D9D9E0"
+    android:background="@drawable/bg_image"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
@@ -31,32 +31,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
-                    android:text="Statistik Kegiatan Penelitian"
+                    android:text="Statistik Aktivitas\nPenelitian"
                     android:textAlignment="center"
                     android:textColor="#191C20"
                     android:textSize="16sp" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/progress_penelitian" />
 
                 <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
                     android:id="@+id/chart_kegiatan_penelitian"
                     android:layout_width="match_parent"
                     android:layout_height="204dp"
                     android:layout_marginTop="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/inter"
-                    android:text="Kategori Sumber Dana Penelitian"
-                    android:textAlignment="center"
-                    android:textColor="#191C20"
-                    android:textSize="16sp" />
-
-                <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-                    android:id="@+id/chart_sumber_dana_penelitian"
-                    android:layout_width="match_parent"
-                    android:layout_height="204dp"
-                    android:layout_marginTop="20dp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -78,57 +70,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
-                    android:text="Statistik Kegiatan Pengabdian\nPada Masyarakat"
+                    android:text="Statistik Aktivitas\nPenelitian Grup Riset"
                     android:textAlignment="center"
                     android:textColor="#191C20"
                     android:textSize="16sp" />
 
-                <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-                    android:id="@+id/chart_kegiatan_pengabdian"
-                    android:layout_width="match_parent"
-                    android:layout_height="204dp"
-                    android:layout_marginTop="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/inter"
-                    android:text="Kategori Sumber Dana\nPengabdian Pada Masyarakat"
-                    android:textAlignment="center"
-                    android:textColor="#191C20"
-                    android:textSize="16sp" />
-
-                <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-                    android:id="@+id/chart_sumber_dana_pengabdian"
-                    android:layout_width="match_parent"
-                    android:layout_height="204dp"
-                    android:layout_marginTop="20dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            app:cardBackgroundColor="#D9FFFFFF"
-            app:cardCornerRadius="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="22dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter"
-                    android:text="Sebaran Grup Riset"
-                    android:textAlignment="center"
-                    android:textColor="#191C20"
-                    android:textSize="16sp" />
+                    android:indeterminate="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/progress_grup_riset" />
 
                 <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
                     android:id="@+id/chart_sebaran_riset"
@@ -157,15 +110,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
-                    android:text="Sebaran Publikasi"
+                    android:text="Statistik Aktivitas\nHibah Pengabdian"
                     android:textAlignment="center"
                     android:textColor="#191C20"
                     android:textSize="16sp" />
 
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/progress_hibah_pengabdian" />
+
                 <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-                    android:id="@+id/chart_sebaran_publikasi"
+                    android:id="@+id/chart_hibah_pengabdian"
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
+                    android:layout_height="220dp"
                     android:layout_marginTop="20dp">
                 </com.github.aachartmodel.aainfographics.aachartcreator.AAChartView>
             </LinearLayout>

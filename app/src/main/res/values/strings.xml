@@ -5,4 +5,6 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_dashboard">Dashboard</string>
     <string name="menu_history">Riwayat Capaian Berkarya</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

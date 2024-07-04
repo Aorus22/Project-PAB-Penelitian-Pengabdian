@@ -12,37 +12,73 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_data_penelitian"
+        android:id="@+id/nav_hibah_pengabdian"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.hibah_pengabdian.HibahPengabdianFragment"
+        android:label=""
+        tools:layout="@layout/fragment_hibah_pengabdian" />
+
+    <fragment
+        android:id="@+id/nav_penelitian"
         android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
         android:label=""
         tools:layout="@layout/fragment_other" />
 
     <fragment
-        android:id="@+id/nav_data_pengabdian"
+        android:id="@+id/nav_penelitian_grup_riset"
         android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
         android:label=""
         tools:layout="@layout/fragment_other" />
 
     <fragment
-        android:id="@+id/nav_data_riset"
+        android:id="@+id/nav_riwayat"
         android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
         android:label=""
         tools:layout="@layout/fragment_other" />
 
     <fragment
-        android:id="@+id/nav_data_publikasi"
+        android:id="@+id/nav_rekap"
         android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
         android:label=""
         tools:layout="@layout/fragment_other" />
 
     <fragment
-        android:id="@+id/nav_data_sitasi"
+        android:id="@+id/nav_sumber_biaya"
         android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
         android:label=""
         tools:layout="@layout/fragment_other" />
 
     <fragment
-        android:id="@+id/nav_history"
+        android:id="@+id/nav_prosiding"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:label=""
+        tools:layout="@layout/fragment_other" />
+
+    <fragment
+        android:id="@+id/nav_haki"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:label=""
+        tools:layout="@layout/fragment_other" />
+
+    <fragment
+        android:id="@+id/nav_program_kerja"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:label=""
+        tools:layout="@layout/fragment_other" />
+
+    <fragment
+        android:id="@+id/nav_koran"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:label=""
+        tools:layout="@layout/fragment_other" />
+
+    <fragment
+        android:id="@+id/nav_keynote_speaker"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:label=""
+        tools:layout="@layout/fragment_other" />
+
+    <fragment
+        android:id="@+id/nav_reviewer"
         android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
         android:label=""
         tools:layout="@layout/fragment_other" />

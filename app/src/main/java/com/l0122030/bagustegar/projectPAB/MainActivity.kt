@@ -41,7 +41,20 @@ class MainActivity : AppCompatActivity() {
         // Membuat AppBarConfiguration dengan destination dan DrawerLayout
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_data_penelitian, R.id.nav_data_pengabdian, R.id.nav_data_riset, R.id.nav_data_publikasi, R.id.nav_data_sitasi, R.id.nav_history
+                R.id.nav_home,
+                R.id.nav_hibah_pengabdian,
+                R.id.nav_activity,
+                R.id.nav_penelitian,
+                R.id.nav_penelitian_grup_riset,
+                R.id.nav_riwayat,
+                R.id.nav_rekap,
+                R.id.nav_sumber_biaya,
+                R.id.nav_prosiding,
+                R.id.nav_haki,
+                R.id.nav_program_kerja,
+                R.id.nav_koran,
+                R.id.nav_keynote_speaker,
+                R.id.nav_reviewer
             ), drawerLayout
         )
         // Mengatur ActionBar yang dikembalikan oleh setSupportActionBar() untuk digunakan dengan NavController

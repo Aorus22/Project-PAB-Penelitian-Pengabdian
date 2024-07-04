@@ -13,42 +13,82 @@
 
     <group android:id="@+id/second_menu" android:checkableBehavior="single">
         <item
-            android:id="@+id/main_item"
-            android:icon="@drawable/ic_activity"
-            android:title="Aktivitas">
-            <menu>
-                <item
-                    android:id="@+id/nav_data_penelitian"
-                    android:icon="@drawable/ic_science"
-                    android:title="Data Penelitian"
-                    android:checkable="true"/>
-                <item
-                    android:id="@+id/nav_data_pengabdian"
-                    android:icon="@drawable/ic_handshake"
-                    android:title="Pengabdian Pada Masyarakat"
-                    android:checkable="true"/>
-                <item
-                    android:id="@+id/nav_data_riset"
-                    android:icon="@drawable/ic_groups"
-                    android:title="Data Grup Riset"
-                    android:checkable="true" />
-                <item
-                    android:id="@+id/nav_data_publikasi"
-                    android:icon="@drawable/ic_book_5"
-                    android:title="Publikasi"
-                    android:checkable="true" />
-                <item
-                    android:id="@+id/nav_data_sitasi"
-                    android:icon="@drawable/ic_ebook"
-                    android:title="Data Sitasi"
-                    android:checkable="true" />
-            </menu>
-        </item>
+            android:id="@+id/nav_activity"
+            android:icon="@drawable/ic_selector_lightbulb"
+            android:title="Aktivitas"
+            android:checkable="false"/>
+
+        <item
+            android:id="@+id/nav_penelitian"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Penelitian"
+            android:checkable="true"/>
+
+        <item
+            android:id="@+id/nav_penelitian_grup_riset"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Penelitian Grup Riset"
+            android:checkable="true" />
+
+        <item
+            android:id="@+id/nav_hibah_pengabdian"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Hibah Pengabdian"
+            android:checkable="true" />
     </group>
     <group android:id="@+id/third_menu" android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_history"
-            android:icon="@drawable/ic_history"
-            android:title="@string/menu_history" />
+            android:id="@+id/nav_riwayat"
+            android:icon="@drawable/ic_book_5"
+            android:title="Riwayat Capaian Berkarya"
+            android:checkable="false"/>
+
+        <item
+            android:id="@+id/nav_rekap"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Rekap"
+            android:checkable="true"/>
+
+        <item
+            android:id="@+id/nav_sumber_biaya"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Sumber Biaya"
+            android:checkable="true" />
+
+        <item
+            android:id="@+id/nav_prosiding"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Prosiding"
+            android:checkable="true" />
+
+        <item
+            android:id="@+id/nav_haki"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Haki"
+            android:checkable="true" />
+
+        <item
+            android:id="@+id/nav_program_kerja"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Program Kerja"
+            android:checkable="true" />
+
+        <item
+            android:id="@+id/nav_koran"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Koran"
+            android:checkable="true" />
+
+        <item
+            android:id="@+id/nav_keynote_speaker"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Keynote Speaker"
+            android:checkable="true" />
+
+        <item
+            android:id="@+id/nav_reviewer"
+            android:icon="@drawable/ic_selector_circle"
+            android:title="Reviewer"
+            android:checkable="true" />
     </group>
 </menu>

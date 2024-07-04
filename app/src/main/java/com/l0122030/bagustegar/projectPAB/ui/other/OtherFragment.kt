@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.l0122030.bagustegar.projectPAB.databinding.FragmentOtherBinding
+import com.l0122030.bagustegar.projectPAB.ui.hibah_pengabdian.HibahViewModel
 
 class OtherFragment : Fragment() {
 
