@@ -36,8 +36,10 @@ class PenelitianFragment : Fragment() {
         val view = binding.root
 
         viewModel.faculties.observe(viewLifecycleOwner, Observer { faculties ->
+            showLoading(true) // Tampilkan CircularProgress saat memuat data
             setupGridLayout(faculties)
             setupBarChart(faculties)
+            showLoading(false) // Sembunyikan CircularProgress setelah data selesai dimuat
         })
 
         return view
@@ -107,6 +109,10 @@ class PenelitianFragment : Fragment() {
         binding.barChart.xAxis.setDrawGridLines(false)
         binding.barChart.xAxis.valueFormatter = IndexAxisValueFormatter(faculties.map { it.namaFakultas.substringAfterLast(" ") })
         binding.barChart.invalidate()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressCircular.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     override fun onDestroyView() {

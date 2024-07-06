@@ -16,4 +16,17 @@
     <string name="tahun">Tahun</string>
     <string name="jumlah_penelitian">Jumlah Penelitian</string>
     <string name="nama_fakultas">Nama Fakultas</string>
+    <string name="aktivitas">Aktivitas</string>
+    <string name="penelitian">Penelitian</string>
+    <string name="penelitian_grup_riset">Penelitian Grup Riset</string>
+    <string name="hibah_pengabdian">Hibah Pengabdian</string>
+    <string name="riwayat_capaian_berkarya">Riwayat Capaian Berkarya</string>
+    <string name="rekap">Rekap</string>
+    <string name="sumber_biaya">Sumber Biaya</string>
+    <string name="prosiding">Prosiding</string>
+    <string name="haki">Haki</string>
+    <string name="program_kerja">Program Kerja</string>
+    <string name="koran">Koran</string>
+    <string name="keynote_speaker">Keynote Speaker</string>
+    <string name="reviewer">Reviewer</string>
 </resources>

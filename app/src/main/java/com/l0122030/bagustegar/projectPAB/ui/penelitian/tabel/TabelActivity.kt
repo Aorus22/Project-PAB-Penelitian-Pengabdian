@@ -14,12 +14,14 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
+import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.l0122030.bagustegar.projectPAB.R
 import com.l0122030.bagustegar.projectPAB.ui.penelitian.IndexAxisValueFormatter
 
 class TabelActivity : AppCompatActivity() {
 
     private val viewModel: TabelViewModel by viewModels()
+    private lateinit var progressIndicator: CircularProgressIndicator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,10 @@ class TabelActivity : AppCompatActivity() {
 
         val tableLayout = findViewById<TableLayout>(R.id.tableLayout)
         val barChart = findViewById<BarChart>(R.id.barChart)
+        progressIndicator = findViewById(R.id.progress_circular)
+
+        // Tampilkan progress indicator saat data dimuat
+        showLoading(true)
 
         // Memanggil fungsi untuk mengambil data dari ViewModel berdasarkan fakultas
         viewModel.getDataByFaculty(facultyName)
@@ -40,7 +46,17 @@ class TabelActivity : AppCompatActivity() {
             setupTableLayout(tableLayout, data)
             // Setup BarChart dengan data yang diperoleh
             setupBarChart(barChart, data)
+            // Sembunyikan progress indicator setelah data selesai dimuat
+            showLoading(false)
         })
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            progressIndicator.visibility = View.VISIBLE
+        } else {
+            progressIndicator.visibility = View.GONE
+        }
     }
 
     private fun setupTableLayout(tableLayout: TableLayout, data: List<Pair<String, String>>) {
@@ -78,7 +94,7 @@ class TabelActivity : AppCompatActivity() {
 
     private fun setupBarChart(barChart: BarChart, data: List<Pair<String, String>>) {
         val entries = data.mapIndexed { index, entry ->
-            BarEntry(index.toFloat(), entry.second.toFloat(), entry.first) // Menambahkan label pada setiap bar
+            BarEntry(index.toFloat(), entry.second.toFloat()) // Tidak perlu menambahkan label disini
         }
 
         val dataSet = BarDataSet(entries, "Jumlah Penelitian")
