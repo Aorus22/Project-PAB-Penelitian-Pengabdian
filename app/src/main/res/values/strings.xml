@@ -7,4 +7,13 @@
     <string name="menu_history">Riwayat Capaian Berkarya</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chart">chart</string>
+    <string name="chart_image">Chart Image</string>
+    <string name="fakultas">Fakultas</string>
+    <string name="department">Department</string>
+    <string name="lihat_detail">Lihat detail</string>
+    <string name="icon">icon</string>
+    <string name="tahun">Tahun</string>
+    <string name="jumlah_penelitian">Jumlah Penelitian</string>
+    <string name="nama_fakultas">Nama Fakultas</string>
 </resources>

@@ -1,32 +1,32 @@
-package com.l0122030.bagustegar.projectPAB.data.model
+package com.l0122030.bagustegar.projectPAB.data.model.rekap
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class SumberBiayaResponse(
+data class RekapResponse(
     @field:SerializedName("documents")
-    val documents: List<SumberBiayaItem>? = emptyList()
+    val documents: List<RekapItem>? = emptyList()
 ) : Parcelable
 
 @Parcelize
-data class SumberBiayaFields(
+data class RekapFields(
     @field:SerializedName("Jumlah 2022")
-    val jumlah2022: SumberBiaya2022? = null,
+    val jumlah2022: Rekap2022? = null,
 
     @field:SerializedName("Jumlah 2023")
-    val jumlah2023: SumberBiaya2023? = null,
+    val jumlah2023: Rekap2023? = null,
 
     @field:SerializedName("Jumlah 2024")
-    val jumlah2024: SumberBiaya2024? = null,
+    val jumlah2024: Rekap2024? = null,
 
     @field:SerializedName("Name")
-    val biayaname: SumberBiayaName? = null
+    val rekapname: RekapName? = null
 ) : Parcelable
 
 @Parcelize
-data class SumberBiayaItem(
+data class RekapItem(
 
     @field:SerializedName("createTime")
     val createTime: String? = null,
@@ -38,26 +38,18 @@ data class SumberBiayaItem(
     val updateTime: String? = null,
 
     @field:SerializedName("fields")
-    val fields: SumberBiayaFields? = null
+    val fields: RekapFields? = null
 ) : Parcelable
 
 @Parcelize
-data class SumberBiaya2022(
+data class Rekap2022(
 
     @field:SerializedName("integerValue")
     val integerValue: String? = null
 ) : Parcelable
 
 @Parcelize
-data class SumberBiaya2023(
-
-    @field:SerializedName("integerValue")
-    val integerValue: String? = null
-) : Parcelable
-
-
-@Parcelize
-data class SumberBiaya2024(
+data class Rekap2023(
 
     @field:SerializedName("integerValue")
     val integerValue: String? = null
@@ -65,7 +57,15 @@ data class SumberBiaya2024(
 
 
 @Parcelize
-data class SumberBiayaName(
+data class Rekap2024(
+
+    @field:SerializedName("integerValue")
+    val integerValue: String? = null
+) : Parcelable
+
+
+@Parcelize
+data class RekapName(
     @field:SerializedName("stringValue")
     val stringValue: String? = null
 ) : Parcelable

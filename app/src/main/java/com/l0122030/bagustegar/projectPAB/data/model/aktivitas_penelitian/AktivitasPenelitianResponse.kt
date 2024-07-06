@@ -1,4 +1,4 @@
-package com.l0122030.bagustegar.projectPAB.data.model
+package com.l0122030.bagustegar.projectPAB.data.model.aktivitas_penelitian
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -37,10 +37,10 @@ data class AktivitasPenelitianValue(
 @Parcelize
 data class AktivitasPenelitianFields(
 
-	@field:SerializedName("year")
+    @field:SerializedName("year")
 	val year: AktivitasPenelitianYear? = null,
 
-	@field:SerializedName("value")
+    @field:SerializedName("value")
 	val value: AktivitasPenelitianValue? = null
 ) : Parcelable
 

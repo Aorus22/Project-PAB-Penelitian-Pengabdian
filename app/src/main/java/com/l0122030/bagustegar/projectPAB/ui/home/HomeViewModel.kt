@@ -1,14 +1,13 @@
 package com.l0122030.bagustegar.projectPAB.ui.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.l0122030.bagustegar.projectPAB.data.api.ApiConfig
-import com.l0122030.bagustegar.projectPAB.data.model.AktivitasGrupRiset
-import com.l0122030.bagustegar.projectPAB.data.model.AktivitasPenelitian
-import com.l0122030.bagustegar.projectPAB.data.model.HibahPengabdian
+import com.l0122030.bagustegar.projectPAB.data.model.aktivitas_grup_riset.AktivitasGrupRiset
+import com.l0122030.bagustegar.projectPAB.data.model.aktivitas_penelitian.AktivitasPenelitian
+import com.l0122030.bagustegar.projectPAB.data.model.hibah_pengabdian.HibahPengabdian
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/nav_penelitian"
-        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.penelitian.PenelitianFragment"
         android:label=""
-        tools:layout="@layout/fragment_other" />
+        tools:layout="@layout/fragment_penelitian" />
 
     <fragment
         android:id="@+id/nav_penelitian_grup_riset"

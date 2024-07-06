@@ -9,15 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
 import com.github.aachartmodel.aainfographics.aachartcreator.AASeriesElement
-import com.l0122030.bagustegar.projectPAB.data.model.AktivitasGrupRiset
-import com.l0122030.bagustegar.projectPAB.data.model.AktivitasPenelitian
-import com.l0122030.bagustegar.projectPAB.data.model.HibahPengabdian
+import com.l0122030.bagustegar.projectPAB.data.model.aktivitas_grup_riset.AktivitasGrupRiset
+import com.l0122030.bagustegar.projectPAB.data.model.aktivitas_penelitian.AktivitasPenelitian
+import com.l0122030.bagustegar.projectPAB.data.model.hibah_pengabdian.HibahPengabdian
 import com.l0122030.bagustegar.projectPAB.databinding.FragmentHomeBinding
-import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {

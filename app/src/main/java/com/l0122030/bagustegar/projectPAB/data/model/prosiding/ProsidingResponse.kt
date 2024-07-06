@@ -1,4 +1,4 @@
-package com.l0122030.bagustegar.projectPAB.data.model
+package com.l0122030.bagustegar.projectPAB.data.model.prosiding
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

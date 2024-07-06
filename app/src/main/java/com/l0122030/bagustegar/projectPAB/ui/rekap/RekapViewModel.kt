@@ -1,13 +1,11 @@
 package com.l0122030.bagustegar.projectPAB.ui.rekap
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.l0122030.bagustegar.projectPAB.data.api.ApiConfigGlobal
-import com.l0122030.bagustegar.projectPAB.data.model.Rekap
-import com.l0122030.bagustegar.projectPAB.data.model.RekapResponse
+import com.l0122030.bagustegar.projectPAB.data.model.rekap.Rekap
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

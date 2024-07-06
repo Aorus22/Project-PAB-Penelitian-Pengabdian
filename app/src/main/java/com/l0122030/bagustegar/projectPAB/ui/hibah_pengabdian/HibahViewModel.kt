@@ -1,13 +1,11 @@
 package com.l0122030.bagustegar.projectPAB.ui.hibah_pengabdian
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.l0122030.bagustegar.projectPAB.data.api.ApiConfig
-import com.l0122030.bagustegar.projectPAB.data.model.HibahPengabdian
-import com.l0122030.bagustegar.projectPAB.data.model.HibahPengabdianResponse
+import com.l0122030.bagustegar.projectPAB.data.model.hibah_pengabdian.HibahPengabdian
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

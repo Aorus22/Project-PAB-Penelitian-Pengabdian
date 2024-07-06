@@ -1,28 +1,28 @@
-package com.l0122030.bagustegar.projectPAB.data.model
+package com.l0122030.bagustegar.projectPAB.data.model.hibah_pengabdian
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class AktivitasGrupRisetResponse(
+data class HibahPengabdianResponse(
 
 	@field:SerializedName("documents")
-	val documents: List<RisetItem?>? = null
+	val documents: List<DocumentsItem>? = emptyList()
 ) : Parcelable
 
 @Parcelize
-data class RisetFields(
+data class Fields(
 
-	@field:SerializedName("name")
-	val name: RisetName? = null,
+    @field:SerializedName("value")
+	val value: Value? = null,
 
-	@field:SerializedName("value")
-	val value: RisetValue? = null
+    @field:SerializedName("faculty")
+	val faculty: Faculty? = null
 ) : Parcelable
 
 @Parcelize
-data class RisetItem(
+data class DocumentsItem(
 
 	@field:SerializedName("createTime")
 	val createTime: String? = null,
@@ -34,18 +34,18 @@ data class RisetItem(
 	val updateTime: String? = null,
 
 	@field:SerializedName("fields")
-	val fields: RisetFields? = null
+	val fields: Fields? = null
 ) : Parcelable
 
 @Parcelize
-data class RisetValue(
+data class Value(
 
 	@field:SerializedName("integerValue")
 	val integerValue: String? = null
 ) : Parcelable
 
 @Parcelize
-data class RisetName(
+data class Faculty(
 
 	@field:SerializedName("stringValue")
 	val stringValue: String? = null

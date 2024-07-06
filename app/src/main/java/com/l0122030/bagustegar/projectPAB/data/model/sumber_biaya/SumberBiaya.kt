@@ -1,4 +1,4 @@
-package com.l0122030.bagustegar.projectPAB.data.model
+package com.l0122030.bagustegar.projectPAB.data.model.sumber_biaya
 
 data class SumberBiaya(
     val name: String? = null,

@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DashbordPenelitianDanPengabdian"
         tools:targetApi="31">
+        <activity android:name=".ui.penelitian.tabel.TabelActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
