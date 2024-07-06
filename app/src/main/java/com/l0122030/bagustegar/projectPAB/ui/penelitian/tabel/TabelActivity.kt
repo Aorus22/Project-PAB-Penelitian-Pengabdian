@@ -78,7 +78,7 @@ class TabelActivity : AppCompatActivity() {
 
     private fun setupBarChart(barChart: BarChart, data: List<Pair<String, String>>) {
         val entries = data.mapIndexed { index, entry ->
-            BarEntry(index.toFloat(), entry.second.toFloat())
+            BarEntry(index.toFloat(), entry.second.toFloat(), entry.first) // Menambahkan label pada setiap bar
         }
 
         val dataSet = BarDataSet(entries, "Jumlah Penelitian")
@@ -90,6 +90,7 @@ class TabelActivity : AppCompatActivity() {
         barChart.setFitBars(true)
         barChart.description.isEnabled = false
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(data.map { it.first })
+        barChart.xAxis.setDrawGridLines(false)
         barChart.invalidate()
     }
 }
