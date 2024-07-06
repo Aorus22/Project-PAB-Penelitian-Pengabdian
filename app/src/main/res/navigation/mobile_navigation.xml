@@ -67,13 +67,13 @@
 
     <fragment
         android:id="@+id/nav_keynote_speaker"
-        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.keynote_speaker.KeynoteSpeakerFragment"
         android:label=""
-        tools:layout="@layout/fragment_other" />
+        tools:layout="@layout/fragment_keynote_speaker" />
 
     <fragment
         android:id="@+id/nav_reviewer"
-        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.reviewer.ReviewerFragment"
         android:label=""
-        tools:layout="@layout/fragment_other" />
+        tools:layout="@layout/fragment_reviewer" />
 </navigation>

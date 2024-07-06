@@ -73,19 +73,19 @@
 
         <item
             android:id="@+id/nav_koran"
-            android:icon="@drawable/ic_selector_circle"
+            android:icon="@drawable/baseline_newspaper_24"
             android:title="Koran"
             android:checkable="true" />
 
         <item
             android:id="@+id/nav_keynote_speaker"
-            android:icon="@drawable/ic_selector_circle"
+            android:icon="@drawable/baseline_speaker_notes_24"
             android:title="Keynote Speaker"
             android:checkable="true" />
 
         <item
             android:id="@+id/nav_reviewer"
-            android:icon="@drawable/ic_selector_circle"
+            android:icon="@drawable/baseline_rate_review_24"
             android:title="Reviewer"
             android:checkable="true" />
     </group>

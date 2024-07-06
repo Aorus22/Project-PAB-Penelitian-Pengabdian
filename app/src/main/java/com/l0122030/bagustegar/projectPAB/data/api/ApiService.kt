@@ -8,6 +8,8 @@ import com.l0122030.bagustegar.projectPAB.data.model.penelitian.PenelitianRespon
 import com.l0122030.bagustegar.projectPAB.data.model.prosiding.ProsidingResponse
 import com.l0122030.bagustegar.projectPAB.data.model.rekap.RekapResponse
 import com.l0122030.bagustegar.projectPAB.data.model.sumber_biaya.SumberBiayaResponse
+import com.projectPAB.data.model.keynote_speaker.KeynoteSpeakerRsponse
+import com.projectPAB.data.model.reviewer.ReviewerResponse
 import retrofit2.http.GET
 import retrofit2.http.Url
 
@@ -54,4 +56,16 @@ interface ApiService {
     suspend fun getPenelitianByFakultas(
         @Url url: String
     ): PenelitianItem
+
+    // Que
+    @GET
+    suspend fun  getKeynoteSpeaker(
+        @Url url : String? = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/Keynote%20Speaker"
+    ) : KeynoteSpeakerRsponse
+
+    @GET
+    suspend fun  getReviewer(
+        @Url url : String? = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/Reviewer"
+    ) : ReviewerResponse
+
 }
