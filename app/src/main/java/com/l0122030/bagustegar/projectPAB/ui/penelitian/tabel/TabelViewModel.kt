@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.l0122030.bagustegar.projectPAB.data.api.ApiConfigGlobal
 import com.l0122030.bagustegar.projectPAB.data.api.ApiService
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -31,6 +32,7 @@ class TabelViewModel : ViewModel() {
 
     private val apiService = ApiConfigGlobal.getApiService()
 
+    @OptIn(DelicateCoroutinesApi::class)
     fun getDataByFaculty(facultyName: String) {
         val url = "Penelitian/$facultyName"
         GlobalScope.launch(Dispatchers.IO) {

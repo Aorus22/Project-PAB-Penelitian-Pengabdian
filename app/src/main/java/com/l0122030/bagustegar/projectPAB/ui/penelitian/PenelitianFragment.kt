@@ -101,8 +101,11 @@ class PenelitianFragment : Fragment() {
 
         val barData = BarData(dataSet)
         binding.barChart.data = barData
+        binding.barChart.animateY(1000)
+        binding.barChart.setFitBars(true)
         binding.barChart.description.isEnabled = false
-        binding.barChart.xAxis.valueFormatter = IndexAxisValueFormatter(faculties.map { it.namaFakultas })
+        binding.barChart.xAxis.setDrawGridLines(false)
+        binding.barChart.xAxis.valueFormatter = IndexAxisValueFormatter(faculties.map { it.namaFakultas.substringAfterLast(" ") })
         binding.barChart.invalidate()
     }
 

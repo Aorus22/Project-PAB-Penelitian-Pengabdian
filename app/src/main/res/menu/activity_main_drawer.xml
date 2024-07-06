@@ -14,7 +14,6 @@
     <group android:id="@+id/second_menu" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_activity"
-            android:icon="@drawable/ic_selector_lightbulb"
             android:title="Aktivitas"
             android:checkable="false"/>
 
@@ -26,20 +25,19 @@
 
         <item
             android:id="@+id/nav_penelitian_grup_riset"
-            android:icon="@drawable/ic_selector_circle"
+            android:icon="@drawable/ic_book_5"
             android:title="Penelitian Grup Riset"
             android:checkable="true" />
 
         <item
             android:id="@+id/nav_hibah_pengabdian"
-            android:icon="@drawable/ic_selector_circle"
+            android:icon="@drawable/ic_selector_lightbulb"
             android:title="Hibah Pengabdian"
             android:checkable="true" />
     </group>
     <group android:id="@+id/third_menu" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_riwayat"
-            android:icon="@drawable/ic_book_5"
             android:title="Riwayat Capaian Berkarya"
             android:checkable="false"/>
 
