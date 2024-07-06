@@ -45,19 +45,19 @@
 
         <item
             android:id="@+id/nav_rekap"
-            android:icon="@drawable/ic_selector_circle"
+            android:icon="@drawable/rekap"
             android:title="Rekap"
             android:checkable="true"/>
 
         <item
             android:id="@+id/nav_sumber_biaya"
-            android:icon="@drawable/ic_selector_circle"
+            android:icon="@drawable/sumber_biaya"
             android:title="Sumber Biaya"
             android:checkable="true" />
 
         <item
             android:id="@+id/nav_prosiding"
-            android:icon="@drawable/ic_selector_circle"
+            android:icon="@drawable/prosiding"
             android:title="Prosiding"
             android:checkable="true" />
 
