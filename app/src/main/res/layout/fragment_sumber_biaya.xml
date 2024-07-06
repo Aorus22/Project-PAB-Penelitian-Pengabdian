@@ -64,7 +64,7 @@
                 android:layout_columnSpan="3"
                 android:layout_gravity="center"
                 android:padding="8dp"
-                android:text="Jumlah Judul"
+                android:text="Jumlah Anggaran"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
 
