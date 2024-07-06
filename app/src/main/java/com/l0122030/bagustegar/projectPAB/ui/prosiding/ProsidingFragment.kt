@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.l0122030.bagustegar.projectPAB.databinding.FragmentProsidingBinding
-
 import com.l0122030.bagustegar.projectPAB.databinding.TableRowProsidingBinding
 
 class ProsidingFragment : Fragment() {
@@ -38,9 +37,10 @@ class ProsidingFragment : Fragment() {
                     binding.progressCircular.visibility = View.VISIBLE
                 }
                 is ProsidingState.Success -> {
-                    state.data.forEach { prosiding ->
+                    // Add data rows
+                    state.data.forEachIndexed { index, prosiding ->
                         val tableRow = TableRowProsidingBinding.inflate(layoutInflater, binding.tableLayout, false)
-                        tableRow.tvNo.text = (binding.tableLayout.childCount+1).toString()
+                        tableRow.tvNo.text = (index + 1).toString()
                         tableRow.tvName.text = prosiding.name
                         tableRow.tv2022.text = prosiding.jumlah2022?.toString() ?: "0"
                         tableRow.tv2023.text = prosiding.jumlah2023?.toString() ?: "0"
@@ -49,6 +49,20 @@ class ProsidingFragment : Fragment() {
                         tableRow.tvTotal.text = total.toString()
                         binding.tableLayout.addView(tableRow.root)
                     }
+
+                    // Add total row
+                    val totalRow = TableRowProsidingBinding.inflate(layoutInflater, binding.tableLayout, false)
+                    totalRow.tvNo.text = ""
+                    totalRow.tvName.text = "Total"
+                    val totalJumlah2022 = state.data.sumOf { it.jumlah2022 ?: 0 }
+                    val totalJumlah2023 = state.data.sumOf { it.jumlah2023 ?: 0 }
+                    val totalJumlah2024 = state.data.sumOf { it.jumlah2024 ?: 0 }
+                    val totalOfTotals = totalJumlah2022 + totalJumlah2023 + totalJumlah2024
+                    totalRow.tv2022.text = totalJumlah2022.toString()
+                    totalRow.tv2023.text = totalJumlah2023.toString()
+                    totalRow.tv2024.text = totalJumlah2024.toString()
+                    totalRow.tvTotal.text = totalOfTotals.toString()
+                    binding.tableLayout.addView(totalRow.root)
                 }
                 is ProsidingState.Error -> {
                     Log.e("ProsidingFragment", state.error.localizedMessage.orEmpty(), state.error)
@@ -58,36 +72,8 @@ class ProsidingFragment : Fragment() {
         }
     }
 
-
-        // Add total row
-//        val totalNameTextView = TextView(context).apply {
-//            text = "Total"
-//        }
-//        val totalJumlah2022 = rekapList.sumOf { it.jumlah2022 ?: 0 }
-//        val totalJumlah2023 = rekapList.sumOf { it.jumlah2023 ?: 0 }
-//        val totalJumlah2024 = rekapList.sumOf { it.jumlah2024 ?: 0 }
-//        val totalOfTotals = totalJumlah2022 + totalJumlah2023 + totalJumlah2024
-//
-//        val totalJumlah2022TextView = TextView(context).apply {
-//            text = totalJumlah2022.toString()
-//        }
-//        val totalJumlah2023TextView = TextView(context).apply {
-//            text = totalJumlah2023.toString()
-//        }
-//        val totalJumlah2024TextView = TextView(context).apply {
-//            text = totalJumlah2024.toString()
-//        }
-//        val totalOfTotalsTextView = TextView(context).apply {
-//            text = totalOfTotals.toString()
-//        }
-//
-//        totalRow.addView(totalNameTextView)
-//        totalRow.addView(totalJumlah2022TextView)
-//        totalRow.addView(totalJumlah2023TextView)
-//        totalRow.addView(totalJumlah2024TextView)
-//        totalRow.addView(totalOfTotalsTextView)
-//
-//        tableLayout.addView(totalRow)
-
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
