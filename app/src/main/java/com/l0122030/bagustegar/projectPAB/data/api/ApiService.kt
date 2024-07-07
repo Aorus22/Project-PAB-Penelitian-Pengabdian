@@ -2,10 +2,12 @@ package com.l0122030.bagustegar.projectPAB.data.api
 
 import com.l0122030.bagustegar.projectPAB.data.model.aktivitas_grup_riset.AktivitasGrupRisetResponse
 import com.l0122030.bagustegar.projectPAB.data.model.aktivitas_penelitian.AktivitasPenelitianResponse
+import com.l0122030.bagustegar.projectPAB.data.model.haki.HakiResponse
 import com.l0122030.bagustegar.projectPAB.data.model.hibah_pengabdian.HibahPengabdianResponse
 import com.l0122030.bagustegar.projectPAB.data.model.koran.KoranResponse
 import com.l0122030.bagustegar.projectPAB.data.model.penelitian.PenelitianItem
 import com.l0122030.bagustegar.projectPAB.data.model.penelitian.PenelitianResponse
+import com.l0122030.bagustegar.projectPAB.data.model.program_kerja.ProgramKerjaResponse
 import com.l0122030.bagustegar.projectPAB.data.model.prosiding.ProsidingResponse
 import com.l0122030.bagustegar.projectPAB.data.model.rekap.RekapResponse
 import com.l0122030.bagustegar.projectPAB.data.model.sumber_biaya.SumberBiayaResponse
@@ -62,6 +64,16 @@ interface ApiService {
     suspend fun  getKoran(
         @Url url : String? = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/Koran"
     ) : KoranResponse
+
+    @GET
+    suspend fun  getHaki(
+        @Url url : String? = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/Haki"
+    ) : HakiResponse
+
+    @GET
+    suspend fun  getProgramKerja(
+        @Url url : String? = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/Program%20Kerja"
+    ) : ProgramKerjaResponse
 
     // Que
     @GET

@@ -15,10 +15,10 @@ class HibahViewModel : ViewModel() {
     val uiState: LiveData<HibahState> get() = _uiState
 
     init {
-        getHibahPengabdian()
+        fetchData()
     }
 
-    private fun getHibahPengabdian() {
+    private fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = ApiConfig.getApiService().getHibahPengabdian()

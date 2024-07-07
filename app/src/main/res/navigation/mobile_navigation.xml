@@ -49,15 +49,15 @@
 
     <fragment
         android:id="@+id/nav_haki"
-        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.haki.HakiFragment"
         android:label=""
-        tools:layout="@layout/fragment_other" />
+        tools:layout="@layout/fragment_haki" />
 
     <fragment
         android:id="@+id/nav_program_kerja"
-        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.program_kerja.ProgramKerjaFragment"
         android:label=""
-        tools:layout="@layout/fragment_other" />
+        tools:layout="@layout/fragment_program_kerja" />
 
     <fragment
         android:id="@+id/nav_koran"

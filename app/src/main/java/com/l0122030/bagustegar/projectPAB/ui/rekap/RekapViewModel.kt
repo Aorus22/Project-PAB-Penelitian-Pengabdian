@@ -15,10 +15,10 @@ class RekapViewModel : ViewModel() {
     val uiState: LiveData<RekapState> get() = _uiState
 
     init {
-        getRekap()
+        fetchData()
     }
 
-    private fun getRekap() {
+    private fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = ApiConfigGlobal.getApiService().getRekap()

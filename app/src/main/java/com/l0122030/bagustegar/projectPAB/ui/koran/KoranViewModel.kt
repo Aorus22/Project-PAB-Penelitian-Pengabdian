@@ -20,10 +20,10 @@ class KoranViewModel : ViewModel() {
     )
 
     init {
-        getKoran()
+        fetchData()
     }
 
-    private fun getKoran() {
+    private fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = ApiConfigGlobal.getApiService().getKoran()

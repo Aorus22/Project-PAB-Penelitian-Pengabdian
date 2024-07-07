@@ -1,18 +1,18 @@
-package com.l0122030.bagustegar.projectPAB.ui.reviewer
+package com.l0122030.bagustegar.projectPAB.ui.haki
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.l0122030.bagustegar.projectPAB.data.api.ApiConfigGlobal
-import com.projectPAB.data.model.reviewer.Reviewer
+import com.l0122030.bagustegar.projectPAB.data.model.haki.Haki
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ReviewerViewModel : ViewModel() {
+class HakiViewModel : ViewModel() {
 
-    private var _uiState: MutableLiveData<ReviewerState> = MutableLiveData(ReviewerState.Loading)
-    val uiState: LiveData<ReviewerState> get() = _uiState
+    private var _uiState: MutableLiveData<HakiState> = MutableLiveData(HakiState.Loading)
+    val uiState: LiveData<HakiState> get() = _uiState
 
     init {
         fetchData()
@@ -21,10 +21,10 @@ class ReviewerViewModel : ViewModel() {
     private fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = ApiConfigGlobal.getApiService().getReviewer()
+                val response = ApiConfigGlobal.getApiService().getHaki()
                 val result = response.documents?.map {
-                    Reviewer(
-                        name = it.fields?.reviewername?.stringValue.orEmpty(),
+                    Haki(
+                        name = it.fields?.hakiname?.stringValue.orEmpty(),
                         jumlah2022 = it.fields?.jumlah2022?.integerValue?.toInt() ?: 0,
                         jumlah2023 = it.fields?.jumlah2023?.integerValue?.toInt() ?: 0,
                         jumlah2024 = it.fields?.jumlah2024?.integerValue?.toInt() ?: 0
@@ -32,19 +32,19 @@ class ReviewerViewModel : ViewModel() {
                 } ?: emptyList()
 
                 if (result.isNotEmpty()) {
-                    _uiState.postValue(ReviewerState.Success(result))
+                    _uiState.postValue(HakiState.Success(result))
                 } else {
-                    _uiState.postValue(ReviewerState.Error(Throwable("Data not found")))
+                    _uiState.postValue(HakiState.Error(Throwable("Data not found")))
                 }
             } catch (e: Exception) {
-                _uiState.postValue(ReviewerState.Error(e))
+                _uiState.postValue(HakiState.Error(e))
             }
         }
     }
 }
 
-sealed class ReviewerState {
-    object Loading : ReviewerState()
-    data class Success(val data: List<Reviewer>) : ReviewerState()
-    data class Error(val error: Throwable) : ReviewerState()
+sealed class HakiState {
+    object Loading : HakiState()
+    data class Success(val data: List<Haki>) : HakiState()
+    data class Error(val error: Throwable) : HakiState()
 }

@@ -15,10 +15,10 @@ class SumberBiayaViewModel : ViewModel() {
     val uiState: LiveData<SumberBiayaState> get() = _uiState
 
     init {
-        getSumberBiaya()
+        fetchData()
     }
 
-    private fun getSumberBiaya() {
+    private fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = ApiConfigGlobal.getApiService().getSumberBiaya()

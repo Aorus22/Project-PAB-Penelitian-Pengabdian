@@ -15,10 +15,10 @@ class ProsidingViewModel : ViewModel() {
     val uiState: LiveData<ProsidingState> get() = _uiState
 
     init {
-        getProsiding()
+        fetchData()
     }
 
-    private fun getProsiding() {
+    private fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = ApiConfigGlobal.getApiService().getProsiding()

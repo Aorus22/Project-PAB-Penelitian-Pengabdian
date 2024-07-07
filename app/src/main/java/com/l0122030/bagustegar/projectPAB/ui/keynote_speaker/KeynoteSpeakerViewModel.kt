@@ -15,10 +15,10 @@ class KeynoteSpeakerViewModel : ViewModel() {
     val uiState: LiveData<KeynoteSpeakerState> get() = _uiState
 
     init {
-        getKeynoteSpeaker()
+        fetchData()
     }
 
-    private fun getKeynoteSpeaker() {
+    private fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = ApiConfigGlobal.getApiService().getKeynoteSpeaker()
