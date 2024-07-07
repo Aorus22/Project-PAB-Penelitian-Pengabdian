@@ -61,9 +61,9 @@
 
     <fragment
         android:id="@+id/nav_koran"
-        android:name="com.l0122030.bagustegar.projectPAB.ui.other.OtherFragment"
+        android:name="com.l0122030.bagustegar.projectPAB.ui.koran.KoranFragment"
         android:label=""
-        tools:layout="@layout/fragment_other" />
+        tools:layout="@layout/fragment_koran" />
 
     <fragment
         android:id="@+id/nav_keynote_speaker"

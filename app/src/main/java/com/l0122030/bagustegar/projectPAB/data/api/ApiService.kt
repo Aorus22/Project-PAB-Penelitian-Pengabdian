@@ -3,6 +3,7 @@ package com.l0122030.bagustegar.projectPAB.data.api
 import com.l0122030.bagustegar.projectPAB.data.model.aktivitas_grup_riset.AktivitasGrupRisetResponse
 import com.l0122030.bagustegar.projectPAB.data.model.aktivitas_penelitian.AktivitasPenelitianResponse
 import com.l0122030.bagustegar.projectPAB.data.model.hibah_pengabdian.HibahPengabdianResponse
+import com.l0122030.bagustegar.projectPAB.data.model.koran.KoranResponse
 import com.l0122030.bagustegar.projectPAB.data.model.penelitian.PenelitianItem
 import com.l0122030.bagustegar.projectPAB.data.model.penelitian.PenelitianResponse
 import com.l0122030.bagustegar.projectPAB.data.model.prosiding.ProsidingResponse
@@ -56,6 +57,11 @@ interface ApiService {
     suspend fun getPenelitianByFakultas(
         @Url url: String
     ): PenelitianItem
+
+    @GET
+    suspend fun  getKoran(
+        @Url url : String? = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/Koran"
+    ) : KoranResponse
 
     // Que
     @GET
