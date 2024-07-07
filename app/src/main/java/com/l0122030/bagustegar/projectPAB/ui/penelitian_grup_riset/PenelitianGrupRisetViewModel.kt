@@ -1,17 +1,17 @@
-package com.l0122030.bagustegar.projectPAB.ui.penelitian
+package com.l0122030.bagustegar.projectPAB.ui.penelitian_grup_riset
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.l0122030.bagustegar.projectPAB.R
 import com.l0122030.bagustegar.projectPAB.data.api.ApiConfigGlobal
-import com.l0122030.bagustegar.projectPAB.data.model.penelitian.Penelitian
 import com.l0122030.bagustegar.projectPAB.data.model.penelitian.PenelitianItem
+import com.l0122030.bagustegar.projectPAB.data.model.penelitian_grup_riset.PenelitianGrupRiset
+import com.l0122030.bagustegar.projectPAB.data.model.penelitian_grup_riset.PenelitianGrupRisetItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PenelitianViewModel : ViewModel() {
+class PenelitianGrupRisetViewModel : ViewModel() {
 
 //    private val _faculties = MutableLiveData<List<Triple<String, Int, Int>>>().apply {
 //        value = listOf(
@@ -28,8 +28,8 @@ class PenelitianViewModel : ViewModel() {
 //
 //    val faculties: LiveData<List<Triple<String, Int, Int>>> = _faculties
 
-    private val _faculties = MutableLiveData<List<Penelitian>>()
-    val faculties: LiveData<List<Penelitian>> = _faculties
+    private val _faculties = MutableLiveData<List<PenelitianGrupRiset>>()
+    val faculties: LiveData<List<PenelitianGrupRiset>> = _faculties
 
     init {
         fetchData()
@@ -38,9 +38,9 @@ class PenelitianViewModel : ViewModel() {
     private fun fetchData() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val response = ApiConfigGlobal.getApiService().getPenelitian()
+                val response = ApiConfigGlobal.getApiService().getPenelitianGrupRiset()
                 val facultiesList = response.documents.map { document ->
-                    mapToPenelitian(document)
+                    mapToPenelitianGrupRiset(document)
                 }
                 _faculties.postValue(facultiesList)
             } catch (e: Exception) {
@@ -49,14 +49,14 @@ class PenelitianViewModel : ViewModel() {
         }
     }
 
-    private fun mapToPenelitian(item: PenelitianItem): Penelitian {
+    private fun mapToPenelitianGrupRiset(item: PenelitianGrupRisetItem): PenelitianGrupRiset {
         val pathSegments = item.name.split("/")
         val formattedFacultyName = pathSegments.last().replace("-", " ")
         val urlPenelitianFakultas = item.name.split("/").last()
 
         val totalPenelitian = item.fields.TotalPenelitian.integerValue.toIntOrNull() ?: 0
 
-        return Penelitian(formattedFacultyName, totalPenelitian, urlPenelitianFakultas)
+        return PenelitianGrupRiset(formattedFacultyName, totalPenelitian, urlPenelitianFakultas)
     }
 
 }

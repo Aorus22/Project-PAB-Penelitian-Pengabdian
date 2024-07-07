@@ -1,4 +1,4 @@
-package com.l0122030.bagustegar.projectPAB.ui.penelitian
+package com.l0122030.bagustegar.projectPAB.ui.penelitian_grup_riset
 
 import android.content.Intent
 import android.os.Bundle
@@ -18,21 +18,21 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.l0122030.bagustegar.projectPAB.R
-import com.l0122030.bagustegar.projectPAB.data.model.penelitian.Penelitian
-import com.l0122030.bagustegar.projectPAB.databinding.FragmentPenelitianBinding
-import com.l0122030.bagustegar.projectPAB.ui.penelitian.tabel.TabelActivity
+import com.l0122030.bagustegar.projectPAB.data.model.penelitian_grup_riset.PenelitianGrupRiset
+import com.l0122030.bagustegar.projectPAB.databinding.FragmentPenelitianGrupRisetBinding
+import com.l0122030.bagustegar.projectPAB.ui.penelitian_grup_riset.tabel.TabelActivity
 
-class PenelitianFragment : Fragment() {
+class PenelitianGrupRisetFragment : Fragment() {
 
-    private var _binding: FragmentPenelitianBinding? = null
+    private var _binding: FragmentPenelitianGrupRisetBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: PenelitianViewModel by viewModels()
+    private val viewModel: PenelitianGrupRisetViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPenelitianBinding.inflate(inflater, container, false)
+        _binding = FragmentPenelitianGrupRisetBinding.inflate(inflater, container, false)
         val view = binding.root
 
         viewModel.faculties.observe(viewLifecycleOwner, Observer { faculties ->
@@ -45,12 +45,12 @@ class PenelitianFragment : Fragment() {
         return view
     }
 
-    private fun setupGridLayout(faculties: List<Penelitian>) {
+    private fun setupGridLayout(faculties: List<PenelitianGrupRiset>) {
         binding.buttonsContainer.removeAllViews()
         for ((index, faculty) in faculties.withIndex()) {
             val departmentName = faculty.namaFakultas
             val researchCount = faculty.totalPenelitian
-            val urlFaculty = faculty.urlPenelitianFakultas
+            val urlFaculty = faculty.urlPenelitianGrupRisetFakultas
 
             val buttonLayout = createButtonLayout(departmentName, researchCount, urlFaculty)
 
@@ -93,12 +93,12 @@ class PenelitianFragment : Fragment() {
         startActivity(intent)
     }
 
-    private fun setupBarChart(faculties: List<Penelitian>) {
+    private fun setupBarChart(faculties: List<PenelitianGrupRiset>) {
         val entries = faculties.mapIndexed { index, faculty ->
             BarEntry(index.toFloat(), faculty.totalPenelitian.toFloat())
         }
 
-        val dataSet = BarDataSet(entries, "Jumlah Penelitian")
+        val dataSet = BarDataSet(entries, "Jumlah Penelitian Grup Riset")
         dataSet.colors = ColorTemplate.COLORFUL_COLORS.toList()
 
         val barData = BarData(dataSet)

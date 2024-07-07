@@ -7,6 +7,8 @@ import com.l0122030.bagustegar.projectPAB.data.model.hibah_pengabdian.HibahPenga
 import com.l0122030.bagustegar.projectPAB.data.model.koran.KoranResponse
 import com.l0122030.bagustegar.projectPAB.data.model.penelitian.PenelitianItem
 import com.l0122030.bagustegar.projectPAB.data.model.penelitian.PenelitianResponse
+import com.l0122030.bagustegar.projectPAB.data.model.penelitian_grup_riset.PenelitianGrupRisetItem
+import com.l0122030.bagustegar.projectPAB.data.model.penelitian_grup_riset.PenelitianGrupRisetResponse
 import com.l0122030.bagustegar.projectPAB.data.model.program_kerja.ProgramKerjaResponse
 import com.l0122030.bagustegar.projectPAB.data.model.prosiding.ProsidingResponse
 import com.l0122030.bagustegar.projectPAB.data.model.rekap.RekapResponse
@@ -85,5 +87,16 @@ interface ApiService {
     suspend fun  getReviewer(
         @Url url : String? = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/Reviewer"
     ) : ReviewerResponse
+
+    // Addin
+    @GET
+    suspend fun  getPenelitianGrupRiset(
+        @Url url : String? = "https://firestore.googleapis.com/v1/projects/project-pab-12844/databases/(default)/documents/Penelitian Grup Riset"
+    ) : PenelitianGrupRisetResponse
+
+    @GET
+    suspend fun getPenelitianGrupRisetByFakultas(
+        @Url url: String
+    ): PenelitianGrupRisetItem
 
 }
