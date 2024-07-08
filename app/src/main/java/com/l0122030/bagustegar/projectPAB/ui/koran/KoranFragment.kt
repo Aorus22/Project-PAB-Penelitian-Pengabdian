@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.l0122030.bagustegar.projectPAB.databinding.FragmentKoranBinding
 import com.l0122030.bagustegar.projectPAB.databinding.TableRowKoranBinding
+import com.l0122030.bagustegar.projectPAB.databinding.TableRowProsidingBinding
 
 class KoranFragment : Fragment() {
     private var _binding: FragmentKoranBinding? = null
@@ -49,6 +50,20 @@ class KoranFragment : Fragment() {
                         tableRow.tvTotal.text = total.toString()
                         binding.tableLayout.addView(tableRow.root)
                     }
+
+                    // Add total row
+                    val totalRow = TableRowKoranBinding.inflate(layoutInflater, binding.tableLayout, false)
+                    totalRow.tvNo.text = ""
+                    totalRow.tvName.text = "Total"
+                    val totalJumlah2022 = state.data.sumOf { it.jumlah2022 ?: 0 }
+                    val totalJumlah2023 = state.data.sumOf { it.jumlah2023 ?: 0 }
+                    val totalJumlah2024 = state.data.sumOf { it.jumlah2024 ?: 0 }
+                    val totalOfTotals = totalJumlah2022 + totalJumlah2023 + totalJumlah2024
+                    totalRow.tv2022.text = totalJumlah2022.toString()
+                    totalRow.tv2023.text = totalJumlah2023.toString()
+                    totalRow.tv2024.text = totalJumlah2024.toString()
+                    totalRow.tvTotal.text = totalOfTotals.toString()
+                    binding.tableLayout.addView(totalRow.root)
                 }
                 is KoranState.Error -> {
                     Log.e("KoranFragment", state.error.localizedMessage.orEmpty(), state.error)
