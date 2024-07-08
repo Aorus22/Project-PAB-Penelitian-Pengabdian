@@ -30,4 +30,6 @@
     <string name="koran">Koran</string>
     <string name="keynote_speaker">Keynote Speaker</string>
     <string name="reviewer">Reviewer</string>
+    <string name="statistik_aktivitas_nhibah_pengabdian">deskripsi_aplikasi\n</string>
+    <string name="deskripsi_aplikasi">Selamat datang di Dashboard Penelitian dan Pengabdian! Halaman ini dirancang untuk memberikan Anda gambaran menyeluruh tentang berbagai aktivitas penelitian dan pengabdian yang sedang berlangsung serta yang direncanakan. Di halaman ini, Anda akan menemukan ringkasan dari kegiatan penelitian dan pengabdian dalam berbagai kategori. Informasi ini disajikan dalam bentuk statistik tahunan yang memudahkan Anda melihat perkembangan dari tahun ke tahun. Selain itu, halaman ini juga menampilkan grafik interaktif dan visualisasi data yang membantu Anda memahami tren dan pencapaian di bidang penelitian dan pengabdian. </string>
 </resources>
